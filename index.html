@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube-Converter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav role="navigation">
+        <h2>YVAC</h2>
+        <input class="search-box" type="text" name="search-term" id="js-search-term" placeholder="Search" required>
+                <!--<input type="number" name="max-results" id="js-max-results" value="10" placeholder="Enter a number"> -->
+        <input class="enter" type="button">
+    </nav>	
+
+    <main role="main">
+
+        <p id="js-error-message" class="error-message"></p>
+
+        <section id="results" class="hidden">
+
+            <h2>Search results</h2>
+
+            <ul id="results-list">
+            </ul>
+
+        </section>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
