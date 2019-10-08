@@ -14,70 +14,130 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid lightgrey;  
+    font-size: 20px;
 }
 
-[role="navigation"] h2{
-    margin-right: 10px;
-}
-
-.search-box{
-      margin: none;
-      border: 1px solid grey;
-      width: 60%;
-      border-right: none;
-}
-
-.enter{
-    width: 25px;
-    border: 1px solid grey;
-    border-left: 1px solid grey;
-    background-color: white;
-    background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-  
-  
-  /* MAIN */
-  
-[role="main"] {
-    margin: 0 auto;
-    padding-right:10px;
-    padding-left:10px;
-}
-  
-  /* SEARCH */
-  
 input[type="button"], input[type="text"] {
     padding: 5px;
+}
+
+[role="navigation"] .search-box-label{
+    margin-left: 10px;
+    margin-right: 27px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.search-box, .enter, .settings, .max-results{
+    margin: none;
+    border: 1px solid grey;
+    background-color: white;
+    color: black;
+    font-size: 20px;
 }
   
 input[type="button"]:hover {
     cursor: pointer;
 }
-  
-.error-message {
-      color: red;
+
+.search-box{
+      width: 60%;
+      
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-right: none;
+}
+
+.enter{
+    width: 25px;    
+    background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.settings{
+    width: 15px;
+    border-left: none;
+    background: url(https://image.flaticon.com/icons/svg/64/64576.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
   
   
+  /* MAIN */
+  
+
+  
+hr{
+    margin: -10px; /* reversing the padding of the parent */
+    color: red;
+    background-color: lightgrey;
+    height: 1px;
+    margin-top: 15px;
+    border: none;
+    
+}
+
   /* RESULTS */
-  
-iframe.video{
-    width: 560px;
-    height: 315px; 
+
+.max-results, .max-results-label{
+    margin-top: 20px;
 }
-  
-.title{
+
+.max-results-label{
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.max-results{
+    width: 30%;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.error-message {
+    color: red;
+}
+
+.video-results{
+    padding-left: 0;
+}
+
+.video-info{
+    margin-top: 50px;
     color: grey;
     list-style-type: none;
+    margin-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
 }
-  
+
+iframe.video{
+    width: 60%;
+    max-width: 560px;
+    height: 315px; 
+    margin-bottom: 0;
+
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
   /* DOWNLOAD LINKS */
 .link-boxes{
     list-style-type: none;
+    padding-left: 0;
+    width: 60%;
+    max-width: 560px;
+    margin-top: 0;
+
 }
   
 .link-boxes li a {
@@ -89,18 +149,15 @@ iframe.video{
     background-color: black;
     color: white;
   
-    border: 1px solid grey;
-    border-right: none;
+    border: 1px solid black;
+    border-top: 1px solid grey;
+
+    margin-top: 0;
 }
   
   /* hidden */
 .hidden {
     display: none;
-}
-  
-.dark {
-    background-color: black;
-    color: white;
 }
   
   

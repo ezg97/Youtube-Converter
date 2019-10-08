@@ -8,21 +8,26 @@
 </head>
 <body>
     <nav role="navigation">
-        <h2>YVAC</h2>
+        <label class="search-box-label" for="search-term">YVAC</label>
         <input class="search-box" type="text" name="search-term" id="js-search-term" placeholder="Search" required>
-                <!--<input type="number" name="max-results" id="js-max-results" value="10" placeholder="Enter a number"> -->
+                <!--     -->
         <input class="enter" type="button">
+
+        <input class="settings" type="button" onClick="btnSettings()">
+
     </nav>	
+
 
     <main role="main">
 
-        <p id="js-error-message" class="error-message"></p>
+        <label class="max-results-label hidden" for="max-results">Max Results</label>
+        <input class="max-results hidden" type="text" name="max-results" id="js-max-results" placeholder="Enter a number">
+        <hr>
+        <p id="js-error-message" class="error-message hidden"></p>
 
         <section id="results" class="hidden">
 
-            <h2>Search results</h2>
-
-            <ul id="results-list">
+            <ul class="video-results" id="results-list">
             </ul>
 
         </section>
