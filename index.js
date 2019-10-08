@@ -63,8 +63,8 @@ function displayResults(responseJson) {
         <h3>${responseJson.items[i].snippet.title}</h3>
         <iframe class="video" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}"" frameborder="0" allow="autoplay; encrypted-meda gyroscope; picture-in-picture" allowfullscreen></iframe>
         <ul class="link-boxes">
-            <li><a href="https://youtubemp3.today/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D${responseJson.items[i].id.videoId}">Download Audio</a></li>
-            <li><a href="https://onlinevideoconverter.party/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D${responseJson.items[i].id.videoId}">Download Video</a></li>
+            <li><a href="https://youtubemp3.today/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D${responseJson.items[i].id.videoId}" target="_blank">Download Audio</a></li>
+            <li><a href="https://onlinevideoconverter.party/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D${responseJson.items[i].id.videoId}" target="_blank">Download Video</a></li>
         </ul>
       
       </li>`
