@@ -79,13 +79,13 @@ input[type="button"], input[type="text"] {
 
 .search-box, .enter, .settings, .max-results{
     margin: none;
-    border: 1px solid grey;
+    border: 2px solid grey;
     background-color: white;
     color: black;
     font-size: 20px;
 }
   
-input[type="button"]:hover {
+input[type="button"]:hover, button[type="submit"]:hover {
     cursor: pointer;
 }
 
@@ -153,10 +153,13 @@ input[type="button"]:hover {
 .search-box:focus, .search-box:hover, 
 .enter:focus, .enter:hover, 
 .settings:focus, .settings:hover, 
-.max-results:focus, .max-results:hover,
-.mode:focus, .mode:hover{
+.max-results:focus, .max-results:hover{
     border: 2px solid red;
-
+    outline: none;  
+}
+.mode:focus, .mode:hover{
+    color: red;
+    outline: none;
 }
   
 
@@ -263,7 +266,7 @@ iframe.video{
 }
 
 .link-boxes li a:hover, .link-boxes li a:focus{
-    color: red;         
+    color: red;       
 }
 
   /* --------
@@ -307,20 +310,11 @@ iframe.video{
         font-size: 30px;
     }
 
-    .search-box, .enter, .settings, .max-results{
-        font-size: 24px;
-        height: 30px;
-        
-        margin: none;
-        border: 1px solid grey;
-        background-color: white;
-         color: black;
-    }
+    
     
     .search-box{
         width: 60%;
         max-width: 300px;
-        border: 1px solid grey;
 
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -332,28 +326,41 @@ iframe.video{
         
   }
   
-  .enter{
-        width: 40px;    
-        margin-left:none;
-      background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
-      background-size: 70%;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-color: white;
-  }
-  
-  .settings{
+  .search-box, .enter, .settings, .max-results{
+    font-size: 24px;
+    height: 30px;
+    
+    margin: none;
+    border: 2px solid grey;
+    background-color: white;
+     color: black;
+}
+.settings{
     width: 25px;
     border-left: none;
       background: url(https://image.flaticon.com/icons/svg/64/64576.svg);
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: 100%;
+      background-size: 90%;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
       background-color: white;
       margin-right: auto;
   }
+
+  .enter{
+    width: 40px;    
+    margin-left:none;
+  background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
+  background-size: 70%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-left: none;
+}
+  
+  
+  
 
   
   .max-results{
@@ -373,11 +380,8 @@ iframe.video{
     
     left: -31px;
   }
-
-    .search-box:focus, .search-box:hover, .enter:focus, .enter:hover, .settings:focus, .settings:hover, .max-results:focus, .max-results:hover{
-        border: 1px solid red;
-    }
     
+  
     .mode{
         font-size: 24px;
     }
@@ -457,15 +461,7 @@ iframe.video{
         font-size: 40px;
     }
 
-    .search-box, .enter, .settings, .max-results{
-        font-size: 30px;
-        height: 35px;
-        
-        margin: none;
-        border: 1px solid grey;
-        background-color: white;
-         color: black;
-    }
+    
     .max-results{
         position: relative;
         
@@ -483,6 +479,16 @@ iframe.video{
         
         left: -36px;
       }
+
+    .search-box, .enter, .settings, .max-results{
+        font-size: 30px;
+        height: 35px;
+        
+        margin: none;
+        border: 2px solid grey;
+        background-color: white;
+         color: black;
+    }
     
   .settings{
     width: 35px;
@@ -490,11 +496,22 @@ iframe.video{
       background: url(https://image.flaticon.com/icons/svg/64/64576.svg);
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: 90%;
+      background-size: 70%;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
       background-color: white;
   }    
+
+  .enter{
+    width: 40px;    
+    margin-left:none;
+  background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
+  background-size: 70%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-left: none;
+}
     .mode{
         font-size: 30px;
     }
