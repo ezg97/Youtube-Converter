@@ -3,8 +3,24 @@
 const apiKey = 'AIzaSyBxBsXHbC2hu6qRO6NBOcZTvLcoxxChWvA'; 
 const searchURL = 'https://www.googleapis.com/youtube/v3/search';
 
+
+// this function will clear the results //
 function clearList(){
     $('#results-list').empty();
+}
+
+// This function will update the classes from the initial screen //
+function styleUpdate(){
+    console.log('style update');
+    hide('.intro');
+    show('.mode');
+
+    $('body').removeClass('initial');
+    $('body').addClass('light-body');
+
+    $('.container').addClass('light');
+
+    console.log('white back');
 }
 
 //--------------------- to hide display and to show display --------------------//
@@ -26,13 +42,22 @@ function show(element){
     }
 }
 
+// ------- BUTTONS --------- //
+function btnModeClick(){
+    $('.light-body').toggleClass('dark-body');
+    $('.light').toggleClass('dark');
+    $('.mode').toggleClass('mode-dark');
+}
+
 function btnSettings(){
     console.log('Settings clicked!');
     $('.max-results').toggleClass('hidden');
     $('.max-results-label').toggleClass('hidden');
+    $("#js-max-results").val(''); //whenever "settings" button is clicked
+    // then it will be cleared
 }
 
-
+// formating the query parameter //
 function formatQueryParams(params) {
     console.log('Formating Query');
     const queryItems = Object.keys(params)
@@ -40,15 +65,11 @@ function formatQueryParams(params) {
     return queryItems.join('&');
 }
 
+// Displaying the results //
 function displayResults(responseJson) {
   // if there are previous results, remove them
   console.log('Display results');
-  console.log(responseJson);
-  console.log(responseJson.items[0].snippet);
-  console.log('^^^^^^^^^^^^^^^^^^^^^^^');
-  console.log(responseJson.items[0].id);
-  console.log('^^^^^^^^^^^^^^^^^^^^^^^');
-  console.log(responseJson.items[1].id.videoId);
+
 
   clearList();
   // iterate through the items array
@@ -73,6 +94,7 @@ function displayResults(responseJson) {
   $('#results').removeClass('hidden');
 };
 
+// Fetching the youtube videos from the API //
 function getYouTubeVideos(query, maxResults) {
     console.log(`max: ${maxResults}`);
     let tempMaxResults = $('#js-max-results').val();
@@ -133,9 +155,14 @@ function getYouTubeVideos(query, maxResults) {
     });
 }
 
+// Watching for a form sumbission //
 function watchForm() {
     console.log('Application Started!');
-    $(".enter").on('click', function(){
+    $('#js-form').submit(event => {
+        event.preventDefault();
+
+        styleUpdate();
+
         console.log("Button to search was clicked");
         const searchTerm = $('#js-search-term').val();
         let maxResults=15;
