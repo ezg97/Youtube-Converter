@@ -11,7 +11,6 @@ function clearList(){
 
 // This function will update the classes from the initial screen //
 function styleUpdate(){
-    console.log('style update');
     hide('.intro');
     show('.mode');
 
@@ -19,8 +18,6 @@ function styleUpdate(){
     $('body').addClass('light-body');
 
     $('.container').addClass('light');
-
-    console.log('white back');
 }
 
 //--------------------- to hide display and to show display --------------------//
@@ -29,16 +26,13 @@ function hide(element){
     //this function will hide a class
     if( !$(element).hasClass('hidden') ){
         $(element).addClass('hidden');
-        console.log(`hiding class: ${element}`);
     }
 }
 
 function show(element){
     //this function will reverse the "hide" function
-    console.log(`Show element ran: ${element}`);
     if( $(element).hasClass('hidden') ){
         $(element).removeClass('hidden');
-        console.log(`showing class: ${element}`);
     }
 }
 
@@ -50,7 +44,6 @@ function btnModeClick(){
 }
 
 function btnSettings(){
-    console.log('Settings clicked!');
     $('.max-results').toggleClass('hidden');
     $('.max-results-label').toggleClass('hidden');
     $("#js-max-results").val(''); //whenever "settings" button is clicked
@@ -59,7 +52,6 @@ function btnSettings(){
 
 // formating the query parameter //
 function formatQueryParams(params) {
-    console.log('Formating Query');
     const queryItems = Object.keys(params)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
     return queryItems.join('&');
@@ -68,7 +60,6 @@ function formatQueryParams(params) {
 // Displaying the results //
 function displayResults(responseJson) {
   // if there are previous results, remove them
-  console.log('Display results');
 
 
   clearList();
@@ -96,25 +87,21 @@ function displayResults(responseJson) {
 
 // Fetching the youtube videos from the API //
 function getYouTubeVideos(query, maxResults) {
-    console.log(`max: ${maxResults}`);
     let tempMaxResults = $('#js-max-results').val();
 
     hide('.error-message');
 
     if( !(isNaN(tempMaxResults)) ){
         if(tempMaxResults>1 && tempMaxResults<50){
-            console.log(`New Max Amount: ${tempMaxResults}`);
             maxResults = tempMaxResults;
         }
         else if(tempMaxResults<0 || tempMaxResults>50){
-            console.log(`Out of range: ${tempMaxResults}`);
             $('#js-error-message').text(`Invalid Entry: out of range.`);
             clearList();
             show('.error-message');
             return;
         }
         else if(tempMaxResults==1){
-            console.log('1 entered. Invalid.');
             $('#js-error-message').text(`Invalid Entry: enter more than one.`);
             clearList();
             show('.error-message');
@@ -122,14 +109,13 @@ function getYouTubeVideos(query, maxResults) {
         }
     }
     else{
-        console.log('Invalid Entry: not a number');
         $('#js-error-message').text(`Invalid Entry: not a number.`);
         clearList();
         show('.error-message');
         return;
     }
 
-    console.log('Getting YouTube Videos');
+    //setting the parameters
     const params = {
         key: apiKey,
         q: query,
@@ -138,9 +124,7 @@ function getYouTubeVideos(query, maxResults) {
         type: 'video'
     };
     const queryString = formatQueryParams(params)
-    const url = searchURL + '?' + queryString;
-
-    console.log(url);
+    const url = searchURL + '?' + queryString; 
 
     fetch(url)
         .then(response => {
@@ -157,14 +141,12 @@ function getYouTubeVideos(query, maxResults) {
 
 // Watching for a form sumbission //
 function watchForm() {
-    console.log('Application Started!');
     $('#js-form').submit(event => {
         event.preventDefault();
 
         styleUpdate();
 
-        console.log("Button to search was clicked");
-        const searchTerm = $('#js-search-term').val();
+        const searchTerm = $('#js-search-term').val(); //grabbing the string that was searched
         let maxResults=15;
         getYouTubeVideos(searchTerm, maxResults); //15 videos is the default 
     });

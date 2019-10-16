@@ -164,10 +164,10 @@ input[type="button"]:hover, button[type="submit"]:hover {
   
 
 
-  .mode-dark{
+.mode-dark{
     background-color: black;
     color: white;
-  }
+}
 
 /* ------------------------ 
         MAIN
@@ -326,68 +326,63 @@ iframe.video{
         
   }
   
-  .search-box, .enter, .settings, .max-results{
-    font-size: 24px;
-    height: 30px;
-    
-    margin: none;
-    border: 2px solid grey;
-    background-color: white;
-     color: black;
-}
-.settings{
-    width: 25px;
-    border-left: none;
-      background: url(https://image.flaticon.com/icons/svg/64/64576.svg);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: 90%;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      background-color: white;
-      margin-right: auto;
-  }
+    .search-box, .enter, .settings, .max-results{
+        font-size: 24px;
+        height: 30px;
+        
+        margin: none;
+        border: 2px solid grey;
+        background-color: white;
+        color: black;
+    }
+    .settings{
+        width: 25px;
+        border-left: none;
+        background: url(https://image.flaticon.com/icons/svg/64/64576.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 90%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: white;
+        margin-right: auto;
+    }
 
-  .enter{
-    width: 40px;    
-    margin-left:none;
-  background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
-  background-size: 70%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: white;
-  border-left: none;
-}
-  
-  
-  
+    .enter{
+        width: 40px;    
+        margin-left:none;
+        background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
+        background-size: 70%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: white;
+        border-left: none;
+    }
+    
+    .max-results{
+        position: relative;
+        
+        background-color: white;
+        
+        height: 30px;
+        width: 60%;
+        max-width: 300px;
 
-  
-  .max-results{
-    position: relative;
+        border-radius: 5px;
     
-    background-color: white;
-    
-    height: 30px;
-    width: 60%;
-    max-width: 300px;
-
-    border-radius: 5px;
-  
-    margin-top: 10px; 
-    margin-left: auto;
-    margin-right: auto;
-    
-    left: -31px;
-  }
-    
-  
+        margin-top: 10px; 
+        margin-left: auto;
+        margin-right: auto;
+        
+        left: -31px;
+    }
+        
     .mode{
         font-size: 24px;
     }
 
     /* ----------   MAIN ------------ */
-    
+        
     .intro{
         width: 90%;
         height: 40%;
@@ -401,11 +396,11 @@ iframe.video{
         color: white;
         border: 1px solid white;
         border-radius: 5px;
-    
+        
         background:
         linear-gradient(
-          rgba(0, 0, 0, .2),
-          rgba(0, 0, 0, .2)
+            rgba(0, 0, 0, .2),
+            rgba(0, 0, 0, .2)
         );
     }
 
@@ -414,12 +409,12 @@ iframe.video{
         text-align: center;
         font-size: 40px;
     }
-    
+        
     .intro .summary{
         text-align: center;
         font-size: 30px;
-    
     }
+
     /* -----------  RESULTS ------------ */
     .error-message {
         color: red;
@@ -490,31 +485,30 @@ iframe.video{
          color: black;
     }
     
-  .settings{
-    width: 35px;
-    border-left: none;
-      background: url(https://image.flaticon.com/icons/svg/64/64576.svg);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: 70%;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      background-color: white;
-  }    
+    .settings{
+        width: 35px;
+        border-left: none;
+        background: url(https://image.flaticon.com/icons/svg/64/64576.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 70%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: white;
+    }    
 
-  .enter{
-    width: 40px;    
-    margin-left:none;
-  background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
-  background-size: 70%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: white;
-  border-left: none;
-}
+    .enter{
+        width: 40px;    
+        margin-left:none;
+        background: url(https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.4.6_challenge_design_to_code/magnifying-glass.png);
+        background-size: 70%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: white;
+        border-left: none;
+    }
     .mode{
         font-size: 30px;
     }
-
 
 }
