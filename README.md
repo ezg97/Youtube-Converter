@@ -11,6 +11,6 @@ Live Site: [Youtube-Converter](https://ezg97.github.io/Youtube-Converter/)
 3. After selecting the "download video" link, this is the page that will be opened in a new tab, click the "download" button!
 ![Download Page Image](api-download.jpg)
 
-##This site utilizes the YouTube API to search for videos and provides access to download the audio or video found.
+## This site utilizes the YouTube API to search for videos and provides access to download the audio or video found.
 
 Utilized: **Javascript, jQuery, CSS, and HTML**.
