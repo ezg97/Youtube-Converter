@@ -62,8 +62,7 @@ function formatQueryParams(params) {
 // Displaying the results //
 function displayResults(responseJson) {
   // if there are previous results, remove them
-  console.log(responseJson);
-  console.log(responseJson.items.length);
+
  
   clearList();
 
@@ -108,7 +107,6 @@ function getYouTubeVideos(query, maxResults) {
             $('#js-error-message').text(`Invalid Entry: out of range.`);
             clearList();
             show('.error-message');
-            console.log(tempMaxResults);
             return;
 
         }
