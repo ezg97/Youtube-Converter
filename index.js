@@ -104,7 +104,7 @@ function getYouTubeVideos(query, maxResults) {
         if(tempMaxResults>1 && tempMaxResults<=50){
             maxResults = tempMaxResults;
         }
-        else if(tempMaxResults<0 || tempMaxResults>50){
+        else if(tempMaxResults<=0 || tempMaxResults>50){
             $('#js-error-message').text(`Invalid Entry: out of range.`);
             clearList();
             show('.error-message');
