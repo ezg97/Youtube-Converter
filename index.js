@@ -104,11 +104,13 @@ function getYouTubeVideos(query, maxResults) {
         if(tempMaxResults>1 && tempMaxResults<=50){
             maxResults = tempMaxResults;
         }
-        else if(tempMaxResults<=0 || tempMaxResults>50){
+        else if(tempMaxResults<0 || tempMaxResults>50){
             $('#js-error-message').text(`Invalid Entry: out of range.`);
             clearList();
             show('.error-message');
+            console.log(tempMaxResults);
             return;
+
         }
         else if(tempMaxResults==1){
             $('#js-error-message').text(`Invalid Entry: enter more than one.`);
@@ -116,6 +118,7 @@ function getYouTubeVideos(query, maxResults) {
             show('.error-message');
             return;
         }
+       
     }
     else{
         $('#js-error-message').text(`Invalid Entry: not a number.`);
