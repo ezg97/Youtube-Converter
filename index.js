@@ -1,7 +1,9 @@
 'use strict';
 
-const apiKey = 'AIzaSyBxBsXHbC2hu6qRO6NBOcZTvLcoxxChWvA'; 
-const searchURL = 'https://www.googleapis.com/youtube/v3/search';
+const YVAC_STORE = {
+    apiKey: 'AIzaSyBxBsXHbC2hu6qRO6NBOcZTvLcoxxChWvA',
+    searchURL: 'https://www.googleapis.com/youtube/v3/search',
+}
 
 
 // this function will clear the results //
@@ -60,9 +62,16 @@ function formatQueryParams(params) {
 // Displaying the results //
 function displayResults(responseJson) {
   // if there are previous results, remove them
-
-
+  console.log(responseJson);
+  console.log(responseJson.items.length);
+ 
   clearList();
+
+  if(responseJson.items.length<=0){
+    $('#js-error-message').text(`No results found. Try using changing your search entry.`);
+    show('.error-message');
+    return;
+  }
   // iterate through the items array
   for (let i = 0; i < responseJson.items.length; i++){
     // for each video object in the items 
@@ -73,7 +82,7 @@ function displayResults(responseJson) {
       `<li class="video-info">
         
         <h3>${responseJson.items[i].snippet.title}</h3>
-        <iframe class="video" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}"" frameborder="0" allow="autoplay; encrypted-meda gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video" src='https://www.youtube.com/embed/${responseJson.items[i].id.videoId}' frameborder="0" allow="autoplay; encrypted-meda gyroscope; picture-in-picture" allowfullscreen></iframe>
         <ul class="link-boxes">
             <li><a href="https://youtubemp3.today/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D${responseJson.items[i].id.videoId}" target="_blank">Download Audio</a></li>
             <li><a href="https://onlinevideoconverter.party/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D${responseJson.items[i].id.videoId}" target="_blank">Download Video</a></li>
@@ -117,14 +126,14 @@ function getYouTubeVideos(query, maxResults) {
 
     //setting the parameters
     const params = {
-        key: apiKey,
+        key: YVAC_STORE.apiKey,
         q: query,
         part: 'snippet',
         maxResults,
         type: 'video'
     };
     const queryString = formatQueryParams(params)
-    const url = searchURL + '?' + queryString; 
+    const url = YVAC_STORE.searchURL + '?' + queryString; 
 
     fetch(url)
         .then(response => {

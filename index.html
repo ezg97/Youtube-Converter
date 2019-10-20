@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube-Converter</title>
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat%7CRaleway&amp;display=swap" rel="stylesheet"/>
 </head>
 
 <body class='initial'>
     <nav role="navigation">
-        <label class="search-box-label" for="search-term">YVAC</label>
+        <label class="search-box-label" for="js-search-term"><a href="https://ezg97.github.io/Youtube-Converter/">YVAC</a></label>
 
         <form id='js-form' class="js-form start">
             <input class="search-box" type="text" name="search-term" id="js-search-term" placeholder="Search" required>
             <button class="enter" type="submit"></button>   
             
-            <input class="settings" type="button" onClick="btnSettings()">
+            <input class="settings" type="button" onClick="btnSettings()" value=" ">
             
             <!-- This div will allow "max-results" to appear on a new line
                 even tho the flex-direction is a row. -->
@@ -25,7 +25,7 @@
 
         </form>
 
-        <input class="mode hidden" onclick="btnModeClick()" type="button" value="&#9789"></input>
+        <input class="mode hidden" onclick="btnModeClick()" type="button" value="&#9789;">
         
     </nav>	
 

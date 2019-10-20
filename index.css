@@ -77,6 +77,12 @@ input[type="button"], input[type="text"] {
     font-size: 24px;
 }
 
+.search-box-label a{
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+}
+
 .search-box, .enter, .settings, .max-results{
     margin: none;
     border: 2px solid grey;
@@ -149,6 +155,11 @@ input[type="button"]:hover, button[type="submit"]:hover {
     font-weight: bold;
     font-size: 20px;
   }
+
+
+.search-box-label a:hover, .search-box-label a:focus{
+    text-decoration: underline;
+}
 
 .search-box:focus, .search-box:hover, 
 .enter:focus, .enter:hover, 
