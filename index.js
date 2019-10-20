@@ -101,7 +101,7 @@ function getYouTubeVideos(query, maxResults) {
     hide('.error-message');
 
     if( !(isNaN(tempMaxResults)) ){
-        if(tempMaxResults>1 && tempMaxResults<50){
+        if(tempMaxResults>1 && tempMaxResults<=50){
             maxResults = tempMaxResults;
         }
         else if(tempMaxResults<0 || tempMaxResults>50){
